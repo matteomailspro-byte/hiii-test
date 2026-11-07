@@ -7449,11 +7449,38 @@ function numeroDeLUnite(id) {
  * Corrige la réponse : juste ou faux, la bonne réponse, l'explication.
  * "bouton" = le bouton touché (choix multiples), null pour une réponse écrite.
  */
+/**
+ * Pour « transforme la phrase » : on accepte une réponse partielle si elle contient
+ * TOUT ce qui change entre la phrase de départ et la bonne réponse.
+ * Ex. « She is happy. » → « She isn't happy. » : « isn't » ou « isn't happy » suffit.
+ */
+function gramPartieSuffisante(reponse, bonne, depart) {
+  const mots = (t) => formeLongue(t || "").split(" ").filter(Boolean);
+  const a = mots(bonne), q = mots(depart), r = mots(reponse);
+  if (!r.length || !q.length) return false;
+  // Les mots identiques au début et à la fin ne changent pas : le reste = la partie à écrire
+  let d = 0;
+  while (d < a.length && d < q.length && a[d] === q[d]) d++;
+  let f = 0;
+  while (f < a.length - d && f < q.length - d && a[a.length - 1 - f] === q[q.length - 1 - f]) f++;
+  const debut = d, fin = a.length - f;
+  if (fin <= debut) return false;
+  // La réponse doit être un morceau de la bonne phrase qui couvre toute la partie qui change
+  for (let i = 0; i <= debut && i + r.length <= a.length; i++) {
+    if (i + r.length >= fin && r.every((m, k) => m === a[i + k])) return true;
+  }
+  return false;
+}
+
 function corriger(reponse, bouton) {
   const q = questions[numeroQuestion];
   const bonnesReponses = Array.isArray(q.answer) ? q.answer : [q.answer];
   // Juste si c'est la même chose, en forme courte OU longue (I'm = I am)
   let juste = bonnesReponses.some((r) => formeLongue(r) === formeLongue(reponse));
+  // « Transformer la phrase » : écrire SEULEMENT la partie qui change suffit (demande de Matteo)
+  if (!juste && q.type === "ecrire") {
+    juste = bonnesReponses.some((r) => gramPartieSuffisante(reponse, r, q.question));
+  }
   // « Presque » : seule l'apostrophe est mal placée (ex. « i'am » au lieu de I'm / I am).
   // On l'accepte, mais avec une petite remarque sur l'orthographe.
   let remarque = "";
@@ -7505,7 +7532,10 @@ function corriger(reponse, bouton) {
   const bonne = document.getElementById("gram-bonne");
   bonne.textContent = phrase;
   bonne.lang = "en";
-  document.getElementById("gram-explication").textContent = dansMaLangue(q.explication);
+  // L'explication seulement quand c'est faux (demande de Matteo : inutile quand on a juste)
+  const explication = document.getElementById("gram-explication");
+  explication.textContent = dansMaLangue(q.explication);
+  explication.hidden = juste;
   const zoneRemarque = document.getElementById("gram-remarque");
   zoneRemarque.textContent = remarque;
   zoneRemarque.hidden = !remarque;
