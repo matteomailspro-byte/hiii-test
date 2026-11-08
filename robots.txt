@@ -1,2 +1,26 @@
+# Site de test privé : les moteurs de recherche (Google…) ne doivent pas l'indexer.
+# Seuls les robots qui fabriquent l'aperçu d'un lien partagé (WhatsApp, Messenger,
+# Telegram, Discord…) peuvent lire la page, pour afficher le titre et l'image.
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
 User-agent: *
 Disallow: /
