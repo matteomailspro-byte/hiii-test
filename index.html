@@ -1526,6 +1526,139 @@ select.menu-langues option {
 
 
 /* =========================================================
+   45. LES NOUVEAUX THÈMES HOLO (8 nov.) : Crépuscule, Ardoise,
+   Framboise, Nacre, Acier & neige — d'après l'inspiration de Matteo.
+   Comme Néon et Aurore : cartes en dégradé (univers Holo),
+   jour et nuit. Couleurs de base : l (clair), m (principale),
+   d (foncée), a (accent).
+   ========================================================= */
+/* Crépuscule */
+:root[data-style="holo"][data-palette="crepuscule"] { --logo-1: #8B7BD8; --logo-2: #C59890; --logo-3: #FFB648; }
+:root[data-style="holo"][data-palette="crepuscule"] {
+  --irise: linear-gradient(120deg, #8B7BD8 0%, #C59890 28%, #FFB648 52%, #EDE8F5 78%, #8B7BD8 100%);
+  --irise-rond: conic-gradient(from 200deg, #8B7BD8, #C59890, #FFB648, #EDE8F5, #8B7BD8);
+  --neon: #A295E0;
+  --fond: #0B0816;
+  --nuit: #0B0816;
+  --lueur: 139, 123, 216;
+  --lueur-2: 255, 182, 72;
+  --carte-haut: rgba(29, 22, 59, 0.96);
+  --carte-bas: rgba(14, 11, 30, 0.96);
+  --violet: #9C8FDE;
+  --violet-texte: #C5BDEC;
+  --jaune: #FFB648;
+  --teinte-violet: rgba(139, 123, 216, 0.14); --icone-violet: #C5BDEC;
+  --teinte-menthe: rgba(255, 182, 72, 0.14); --icone-menthe: #FFCC7F;
+  --teinte-corail: rgba(197, 152, 144, 0.16); --icone-corail: #DCC1BC;
+  --teinte-jaune:  rgba(139, 123, 216, 0.14); --icone-jaune:  #C5BDEC;
+  --motif: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><g fill='%23FFFFFF' fill-opacity='.16'><path transform='translate(40 50) scale(0.7)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(190 28) scale(0.45)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(140 180) scale(0.9)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(20 170) scale(0.4)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/></g><g fill='%23FFB648' fill-opacity='.45'><path transform='translate(220 130) scale(0.55)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(85 225) scale(0.35)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(105 105) scale(0.3)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/></g></svg>");
+  --halo-1: rgba(139, 123, 216, 0.16);
+  --halo-2: rgba(255, 182, 72, 0.12);
+  --halo-3: rgba(36, 28, 74, 0.3);
+}
+.pastille-couleur[data-valeur="crepuscule"] { --degrade: linear-gradient(135deg, #8B7BD8, #C59890 55%, #FFB648); }
+/* Ardoise */
+:root[data-style="holo"][data-palette="ardoise"] { --logo-1: #7FA3B3; --logo-2: #9FC3D0; --logo-3: #BFE3EE; }
+:root[data-style="holo"][data-palette="ardoise"] {
+  --irise: linear-gradient(120deg, #7FA3B3 0%, #9FC3D0 28%, #BFE3EE 52%, #E3EBEF 78%, #7FA3B3 100%);
+  --irise-rond: conic-gradient(from 200deg, #7FA3B3, #9FC3D0, #BFE3EE, #E3EBEF, #7FA3B3);
+  --neon: #99B5C2;
+  --fond: #091013;
+  --nuit: #091013;
+  --lueur: 127, 163, 179;
+  --lueur-2: 191, 227, 238;
+  --carte-haut: rgba(24, 43, 51, 0.96);
+  --carte-bas: rgba(12, 22, 26, 0.96);
+  --violet: #92B1BE;
+  --violet-texte: #BFD1D9;
+  --jaune: #BFE3EE;
+  --teinte-violet: rgba(127, 163, 179, 0.14); --icone-violet: #BFD1D9;
+  --teinte-menthe: rgba(191, 227, 238, 0.14); --icone-menthe: #D2EBF3;
+  --teinte-corail: rgba(159, 195, 208, 0.16); --icone-corail: #C5DBE3;
+  --teinte-jaune:  rgba(127, 163, 179, 0.14); --icone-jaune:  #BFD1D9;
+  --motif: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><g fill='%23FFFFFF' fill-opacity='.16'><path transform='translate(40 50) scale(0.7)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(190 28) scale(0.45)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(140 180) scale(0.9)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(20 170) scale(0.4)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/></g><g fill='%23BFE3EE' fill-opacity='.45'><path transform='translate(220 130) scale(0.55)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(85 225) scale(0.35)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(105 105) scale(0.3)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/></g></svg>");
+  --halo-1: rgba(127, 163, 179, 0.16);
+  --halo-2: rgba(191, 227, 238, 0.12);
+  --halo-3: rgba(30, 54, 64, 0.3);
+}
+.pastille-couleur[data-valeur="ardoise"] { --degrade: linear-gradient(135deg, #7FA3B3, #9FC3D0 55%, #BFE3EE); }
+/* Framboise */
+:root[data-style="holo"][data-palette="framboise"] { --logo-1: #FF4D74; --logo-2: #FF938E; --logo-3: #FFD9A8; }
+:root[data-style="holo"][data-palette="framboise"] {
+  --irise: linear-gradient(120deg, #FF4D74 0%, #FF938E 28%, #FFD9A8 52%, #FFE6EC 78%, #FF4D74 100%);
+  --irise-rond: conic-gradient(from 200deg, #FF4D74, #FF938E, #FFD9A8, #FFE6EC, #FF4D74);
+  --neon: #FF7190;
+  --fond: #25050F;
+  --nuit: #25050F;
+  --lueur: 255, 77, 116;
+  --lueur-2: 255, 217, 168;
+  --carte-haut: rgba(98, 13, 41, 0.96);
+  --carte-bas: rgba(49, 6, 20, 0.96);
+  --violet: #FF6889;
+  --violet-texte: #FFA6BA;
+  --jaune: #FFD9A8;
+  --teinte-violet: rgba(255, 77, 116, 0.14); --icone-violet: #FFA6BA;
+  --teinte-menthe: rgba(255, 217, 168, 0.14); --icone-menthe: #FFE4C2;
+  --teinte-corail: rgba(255, 147, 142, 0.16); --icone-corail: #FFBEBB;
+  --teinte-jaune:  rgba(255, 77, 116, 0.14); --icone-jaune:  #FFA6BA;
+  --motif: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><g fill='%23FFFFFF' fill-opacity='.16'><path transform='translate(40 50) scale(0.7)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(190 28) scale(0.45)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(140 180) scale(0.9)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(20 170) scale(0.4)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/></g><g fill='%23FFD9A8' fill-opacity='.45'><path transform='translate(220 130) scale(0.55)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(85 225) scale(0.35)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(105 105) scale(0.3)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/></g></svg>");
+  --halo-1: rgba(255, 77, 116, 0.16);
+  --halo-2: rgba(255, 217, 168, 0.12);
+  --halo-3: rgba(122, 16, 51, 0.3);
+}
+.pastille-couleur[data-valeur="framboise"] { --degrade: linear-gradient(135deg, #FF4D74, #FF938E 55%, #FFD9A8); }
+/* Nacre */
+:root[data-style="holo"][data-palette="nacre"] { --logo-1: #C9B6EC; --logo-2: #E0BFE6; --logo-3: #F7C8E0; }
+:root[data-style="holo"][data-palette="nacre"] {
+  --irise: linear-gradient(120deg, #C9B6EC 0%, #E0BFE6 28%, #F7C8E0 52%, #F4EEFB 78%, #C9B6EC 100%);
+  --irise-rond: conic-gradient(from 200deg, #C9B6EC, #E0BFE6, #F7C8E0, #F4EEFB, #C9B6EC);
+  --neon: #D4C5F0;
+  --fond: #161225;
+  --nuit: #161225;
+  --lueur: 201, 182, 236;
+  --lueur-2: 247, 200, 224;
+  --carte-haut: rgba(60, 48, 98, 0.96);
+  --carte-bas: rgba(30, 24, 49, 0.96);
+  --violet: #D1C1EF;
+  --violet-texte: #E4DAF6;
+  --jaune: #F7C8E0;
+  --teinte-violet: rgba(201, 182, 236, 0.14); --icone-violet: #E4DAF6;
+  --teinte-menthe: rgba(247, 200, 224, 0.14); --icone-menthe: #F9D8E9;
+  --teinte-corail: rgba(224, 191, 230, 0.16); --icone-corail: #ECD9F0;
+  --teinte-jaune:  rgba(201, 182, 236, 0.14); --icone-jaune:  #E4DAF6;
+  --motif: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><g fill='%23FFFFFF' fill-opacity='.16'><path transform='translate(40 50) scale(0.7)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(190 28) scale(0.45)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(140 180) scale(0.9)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(20 170) scale(0.4)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/></g><g fill='%23F7C8E0' fill-opacity='.45'><path transform='translate(220 130) scale(0.55)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(85 225) scale(0.35)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(105 105) scale(0.3)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/></g></svg>");
+  --halo-1: rgba(201, 182, 236, 0.16);
+  --halo-2: rgba(247, 200, 224, 0.12);
+  --halo-3: rgba(75, 60, 122, 0.3);
+}
+.pastille-couleur[data-valeur="nacre"] { --degrade: linear-gradient(135deg, #C9B6EC, #E0BFE6 55%, #F7C8E0); }
+/* Acier & neige */
+:root[data-style="holo"][data-palette="acier"] { --logo-1: #7FA2C8; --logo-2: #B4CAE1; --logo-3: #E8F1FA; }
+:root[data-style="holo"][data-palette="acier"] {
+  --irise: linear-gradient(120deg, #7FA2C8 0%, #B4CAE1 28%, #E8F1FA 52%, #EEF3F8 78%, #7FA2C8 100%);
+  --irise-rond: conic-gradient(from 200deg, #7FA2C8, #B4CAE1, #E8F1FA, #EEF3F8, #7FA2C8);
+  --neon: #99B5D3;
+  --fond: #091018;
+  --nuit: #091018;
+  --lueur: 127, 162, 200;
+  --lueur-2: 232, 241, 250;
+  --carte-haut: rgba(25, 42, 64, 0.96);
+  --carte-bas: rgba(12, 21, 32, 0.96);
+  --violet: #92B0D0;
+  --violet-texte: #BFD0E4;
+  --jaune: #E8F1FA;
+  --teinte-violet: rgba(127, 162, 200, 0.14); --icone-violet: #BFD0E4;
+  --teinte-menthe: rgba(232, 241, 250, 0.14); --icone-menthe: #EFF5FC;
+  --teinte-corail: rgba(180, 202, 225, 0.16); --icone-corail: #D2DFED;
+  --teinte-jaune:  rgba(127, 162, 200, 0.14); --icone-jaune:  #BFD0E4;
+  --motif: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><g fill='%23FFFFFF' fill-opacity='.16'><path transform='translate(40 50) scale(0.7)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(190 28) scale(0.45)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(140 180) scale(0.9)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(20 170) scale(0.4)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/></g><g fill='%23E8F1FA' fill-opacity='.45'><path transform='translate(220 130) scale(0.55)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(85 225) scale(0.35)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/><path transform='translate(105 105) scale(0.3)' d='M0-12Q2-2 12 0Q2 2 0 12Q-2 2-12 0Q-2-2 0-12Z'/></g></svg>");
+  --halo-1: rgba(127, 162, 200, 0.16);
+  --halo-2: rgba(232, 241, 250, 0.12);
+  --halo-3: rgba(31, 53, 80, 0.3);
+}
+.pastille-couleur[data-valeur="acier"] { --degrade: linear-gradient(135deg, #7FA2C8, #B4CAE1 55%, #E8F1FA); }
+
+/* =========================================================
    12. VERSION « JOUR » DES THÈMES HOLOGRAPHIQUES
    Quand on choisit « Clair » (bouton soleil), data-theme="clair"
    est posé sur <html>. Le même univers devient clair et nacré :
@@ -4033,41 +4166,12 @@ html { -webkit-tap-highlight-color: transparent; }
 .gram-carte.horizontale .gram-terrain { margin: 0; }
 
 
-/* =========================================================
-   45. LES THÈMES DOUX (8 nov.) : Crépuscule, Ardoise, Framboise,
-   Nacre, Acier & neige.
-   D'après les images d'inspiration de Matteo, avec la DA actuelle
-   (taches de couleur + mots flous). Ils marchent comme « Actuel » :
-   jour ET nuit. theme.js pose data-palette="…" SANS data-style.
-   Couleurs de base de chaque thème : l (clair), m (principale),
-   d (foncée), a (accent) → voir _outils/maquette/palettes-da-actuelle.
-   ========================================================= */
-/* Crépuscule */
-:root[data-palette="crepuscule"]:not([data-style]) { --violet: #504482; --violet-relief: #342C54; --logo-1: #6D5FA8; --fond: #F3F0F8; --bord: #CDC6E2; --bord-fort: #ADA4CE; --halo-1: rgba(109, 95, 168, 0.3); --halo-2: rgba(255, 182, 72, 0.22); --halo-3: rgba(237, 232, 245, 0.9); --violet-texte: #453A74; --logo-2: #534887; --logo-3: #FFB648; }
-:root[data-palette="crepuscule"][data-theme="sombre"]:not([data-style]) { --fond: #0E0B1C; --nuit: #0E0B1C; --surface: #171230; --bord: #1F183F; --bord-fort: #3A3066; --halo-1: rgba(109, 95, 168, 0.32); --halo-2: rgba(255, 182, 72, 0.16); --halo-3: rgba(36, 28, 74, 0.45); --violet-texte: #A79FCB; --logo-2: #FFB648; --logo-3: #EDE8F5; }
-@media (prefers-color-scheme: dark) { :root[data-palette="crepuscule"]:not([data-theme]):not([data-style]) { --fond: #0E0B1C; --nuit: #0E0B1C; --surface: #171230; --bord: #1F183F; --bord-fort: #3A3066; --halo-1: rgba(109, 95, 168, 0.32); --halo-2: rgba(255, 182, 72, 0.16); --halo-3: rgba(36, 28, 74, 0.45); --violet-texte: #A79FCB; --logo-2: #FFB648; --logo-3: #EDE8F5; } }
-/* Ardoise */
-:root[data-palette="ardoise"]:not([data-style]) { --violet: #45626E; --violet-relief: #2D4048; --logo-1: #5F7F8C; --fond: #EDF2F5; --bord: #C2D0D6; --bord-fort: #A1B5BE; --halo-1: rgba(95, 127, 140, 0.3); --halo-2: rgba(191, 227, 238, 0.22); --halo-3: rgba(227, 235, 239, 0.9); --violet-texte: #3B5762; --logo-2: #486571; --logo-3: #BFE3EE; }
-:root[data-palette="ardoise"][data-theme="sombre"]:not([data-style]) { --fond: #0B1518; --nuit: #0B1518; --surface: #14232A; --bord: #1A2E36; --bord-fort: #324C57; --halo-1: rgba(95, 127, 140, 0.32); --halo-2: rgba(191, 227, 238, 0.16); --halo-3: rgba(30, 54, 64, 0.45); --violet-texte: #9FB2BA; --logo-2: #BFE3EE; --logo-3: #E3EBEF; }
-@media (prefers-color-scheme: dark) { :root[data-palette="ardoise"]:not([data-theme]):not([data-style]) { --fond: #0B1518; --nuit: #0B1518; --surface: #14232A; --bord: #1A2E36; --bord-fort: #324C57; --halo-1: rgba(95, 127, 140, 0.32); --halo-2: rgba(191, 227, 238, 0.16); --halo-3: rgba(30, 54, 64, 0.45); --violet-texte: #9FB2BA; --logo-2: #BFE3EE; --logo-3: #E3EBEF; } }
-/* Framboise */
-:root[data-palette="framboise"]:not([data-style]) { --violet: #BC284D; --violet-relief: #7A1A32; --logo-1: #E8385E; --fond: #FFEFF3; --bord: #F9BAC8; --bord-fort: #F48FA5; --halo-1: rgba(232, 56, 94, 0.3); --halo-2: rgba(255, 233, 199, 0.22); --halo-3: rgba(255, 230, 236, 0.9); --violet-texte: #AC2246; --logo-2: #C22A4F; --logo-3: #FFE9C7; }
-:root[data-palette="framboise"][data-theme="sombre"]:not([data-style]) { --fond: #2E0613; --nuit: #2E0613; --surface: #4F0A21; --bord: #680E2B; --bord-fort: #9B1C40; --halo-1: rgba(232, 56, 94, 0.32); --halo-2: rgba(255, 233, 199, 0.16); --halo-3: rgba(122, 16, 51, 0.45); --violet-texte: #F1889E; --logo-2: #FFE9C7; --logo-3: #FFE6EC; }
-@media (prefers-color-scheme: dark) { :root[data-palette="framboise"]:not([data-theme]):not([data-style]) { --fond: #2E0613; --nuit: #2E0613; --surface: #4F0A21; --bord: #680E2B; --bord-fort: #9B1C40; --halo-1: rgba(232, 56, 94, 0.32); --halo-2: rgba(255, 233, 199, 0.16); --halo-3: rgba(122, 16, 51, 0.45); --violet-texte: #F1889E; --logo-2: #FFE9C7; --logo-3: #FFE6EC; } }
-/* Nacre */
-:root[data-palette="nacre"]:not([data-style]) { --violet: #9785BE; --violet-relief: #62567C; --logo-1: #C9B6EC; --fond: #F8F4FC; --bord: #E9E0F7; --bord-fort: #DED2F4; --halo-1: rgba(201, 182, 236, 0.3); --halo-2: rgba(247, 200, 224, 0.22); --halo-3: rgba(244, 238, 251, 0.9); --violet-texte: #8473AD; --logo-2: #9D8BC4; --logo-3: #F7C8E0; }
-:root[data-palette="nacre"][data-theme="sombre"]:not([data-style]) { --fond: #1C172E; --nuit: #1C172E; --surface: #31274F; --bord: #403368; --bord-fort: #71619C; --halo-1: rgba(201, 182, 236, 0.32); --halo-2: rgba(247, 200, 224, 0.16); --halo-3: rgba(75, 60, 122, 0.45); --violet-texte: #DFD3F4; --logo-2: #F7C8E0; --logo-3: #F4EEFB; }
-@media (prefers-color-scheme: dark) { :root[data-palette="nacre"]:not([data-theme]):not([data-style]) { --fond: #1C172E; --nuit: #1C172E; --surface: #31274F; --bord: #403368; --bord-fort: #71619C; --halo-1: rgba(201, 182, 236, 0.32); --halo-2: rgba(247, 200, 224, 0.16); --halo-3: rgba(75, 60, 122, 0.45); --violet-texte: #DFD3F4; --logo-2: #F7C8E0; --logo-3: #F4EEFB; } }
-/* Acier & neige */
-:root[data-palette="acier"]:not([data-style]) { --violet: #4F6B8A; --violet-relief: #33465A; --logo-1: #6F8FB0; --fond: #F4F7FA; --bord: #CEDAE6; --bord-fort: #AEC1D4; --halo-1: rgba(111, 143, 176, 0.3); --halo-2: rgba(31, 53, 80, 0.22); --halo-3: rgba(238, 243, 248, 0.9); --violet-texte: #435E7B; --logo-2: #53708E; --logo-3: #1F3550; }
-:root[data-palette="acier"][data-theme="sombre"]:not([data-style]) { --fond: #0C141E; --nuit: #0C141E; --surface: #142234; --bord: #1A2D44; --bord-fort: #37506D; --halo-1: rgba(111, 143, 176, 0.32); --halo-2: rgba(255, 255, 255, 0.16); --halo-3: rgba(31, 53, 80, 0.45); --violet-texte: #A9BCD0; --logo-2: #EEF3F8; --logo-3: #EEF3F8; }
-@media (prefers-color-scheme: dark) { :root[data-palette="acier"]:not([data-theme]):not([data-style]) { --fond: #0C141E; --nuit: #0C141E; --surface: #142234; --bord: #1A2D44; --bord-fort: #37506D; --halo-1: rgba(111, 143, 176, 0.32); --halo-2: rgba(255, 255, 255, 0.16); --halo-3: rgba(31, 53, 80, 0.45); --violet-texte: #A9BCD0; --logo-2: #EEF3F8; --logo-3: #EEF3F8; } }
-/* Les pastilles de ces thèmes */
-.pastille-couleur[data-valeur="crepuscule"] { --degrade: linear-gradient(135deg, #6D5FA8, #504482 55%, #FFB648); }
-.pastille-couleur[data-valeur="ardoise"] { --degrade: linear-gradient(135deg, #5F7F8C, #45626E 55%, #BFE3EE); }
-.pastille-couleur[data-valeur="framboise"] { --degrade: linear-gradient(135deg, #E8385E, #BC284D 55%, #FFE9C7); }
-.pastille-couleur[data-valeur="nacre"] { --degrade: linear-gradient(135deg, #C9B6EC, #9785BE 55%, #F7C8E0); }
-.pastille-couleur[data-valeur="acier"] { --degrade: linear-gradient(135deg, #6F8FB0, #4F6B8A 55%, #1F3550); }
+/* Partie 45 (suite) : fond de nuit des nouveaux thèmes Holo */
+:root[data-style="holo"][data-palette="crepuscule"]:not([data-theme="clair"]) { --fond: #100D21; --nuit: #100D21; }
+:root[data-style="holo"][data-palette="ardoise"]:not([data-theme="clair"]) { --fond: #0E181D; --nuit: #0E181D; }
+:root[data-style="holo"][data-palette="framboise"]:not([data-theme="clair"]) { --fond: #370717; --nuit: #370717; }
+:root[data-style="holo"][data-palette="nacre"]:not([data-theme="clair"]) { --fond: #221B37; --nuit: #221B37; }
+:root[data-style="holo"][data-palette="acier"]:not([data-theme="clair"]) { --fond: #0E1824; --nuit: #0E1824; }
 
 </style>
 
@@ -4198,11 +4302,9 @@ function appliquerAnimations(choix) {
 const STYLES_DISPONIBLES = ["actuel", "soleil", "neon", "aurore", "foret", "amethyste",
                             "crepuscule", "ardoise", "framboise", "nacre", "acier"];
 
-// Les thèmes doux (8 nov.) : même allure que « Actuel », autres couleurs (CSS partie 45)
-const PALETTES_DOUCES = ["crepuscule", "ardoise", "framboise", "nacre", "acier"];
-
 // Ces styles reprennent tout l'univers Holo, avec une autre palette de couleurs
-const PALETTES_HOLO = ["soleil", "neon", "aurore", "foret", "amethyste"];
+const PALETTES_HOLO = ["soleil", "neon", "aurore", "foret", "amethyste",
+                       "crepuscule", "ardoise", "framboise", "nacre", "acier"]; // les 5 derniers : 8 nov. (CSS partie 45)
 
 function styleChoisi() {
   const choix = lireProfilTot().style;
@@ -4212,9 +4314,8 @@ function styleChoisi() {
 function appliquerStyle(choix) {
   const racine = document.documentElement;
   // Une palette (soleil, neon…) = l'univers Holo avec d'autres couleurs
-  const palette = PALETTES_HOLO.includes(choix) || PALETTES_DOUCES.includes(choix) ? choix : null;
-  // un thème doux garde l'allure « Actuel » (pas de data-style)
-  const style = PALETTES_HOLO.includes(choix) ? "holo" : (palette ? "actuel" : choix);
+  const palette = PALETTES_HOLO.includes(choix) ? choix : null;
+  const style = palette ? "holo" : choix;
 
   if (style && style !== "actuel") racine.dataset.style = style;
   else delete racine.dataset.style;
@@ -4322,6 +4423,7 @@ appliquerFond(lireProfilTot().fond);
     <div class="entree-outils">
       <div class="entree-couleurs" role="group" data-texte-aria="parametres.style_titre">
         <button type="button" class="pastille-couleur" data-reglage="style" data-valeur="actuel" data-texte-aria="parametres.style_actuel"></button>
+        <button type="button" class="pastille-couleur" data-reglage="style" data-valeur="soleil" data-texte-aria="parametres.style_soleil"></button>
         <button type="button" class="pastille-couleur" data-reglage="style" data-valeur="neon" data-texte-aria="parametres.style_neon"></button>
         <button type="button" class="pastille-couleur" data-reglage="style" data-valeur="aurore" data-texte-aria="parametres.style_aurore"></button>
         <button type="button" class="pastille-couleur" data-reglage="style" data-valeur="crepuscule" data-texte-aria="parametres.style_crepuscule"></button>
@@ -4522,6 +4624,7 @@ appliquerFond(lireProfilTot().fond);
         </button>
         <div id="choix-couleurs" class="choix-couleurs" role="group" data-texte-aria="parametres.style_titre" hidden>
           <button type="button" class="pastille-couleur" data-reglage="style" data-valeur="actuel" data-texte-aria="parametres.style_actuel"></button>
+          <button type="button" class="pastille-couleur" data-reglage="style" data-valeur="soleil" data-texte-aria="parametres.style_soleil"></button>
           <button type="button" class="pastille-couleur" data-reglage="style" data-valeur="neon" data-texte-aria="parametres.style_neon"></button>
           <button type="button" class="pastille-couleur" data-reglage="style" data-valeur="aurore" data-texte-aria="parametres.style_aurore"></button>
           <button type="button" class="pastille-couleur" data-reglage="style" data-valeur="crepuscule" data-texte-aria="parametres.style_crepuscule"></button>
