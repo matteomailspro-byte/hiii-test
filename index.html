@@ -4357,6 +4357,62 @@ html { -webkit-tap-highlight-color: transparent; }
   }
 }
 
+/* =====================================================================
+   PARTIE 51 – FOND « FORMES GONFLÉES » (validé par Matteo, 9 nov.)
+   Les 3 taches floues deviennent 3 grosses formes arrondies et
+   « gonflées » (comme des galets en pâte brillante), aux couleurs du
+   thème. Elles bougent TRÈS doucement (petit balancement + rotation
+   lente), au lieu de traverser l'écran.
+   Pas de filtre flou (trop lourd pour les téléphones) : le relief vient
+   seulement des dégradés et des ombres.
+   ===================================================================== */
+.fond-anime .tache {
+  width: 58vmax;
+  height: 52vmax;
+  opacity: var(--force-gonfle, 0.50);
+  /* forme de galet : 4 coins arrondis différemment */
+  border-radius: 46% 54% 58% 42% / 48% 42% 58% 52%;
+  background:
+    /* le reflet brillant en haut à gauche */
+    radial-gradient(circle at 32% 26%, rgba(255,255,255,0.80) 0, rgba(255,255,255,0) 22%),
+    /* le volume : clair au centre-haut, plus foncé vers le bas */
+    radial-gradient(circle at 40% 35%,
+      color-mix(in srgb, var(--couleur-tache) 55%, #FFFFFF) 0,
+      var(--couleur-tache) 45%,
+      color-mix(in srgb, var(--couleur-tache) 65%, #000000) 100%);
+  /* ombre intérieure (le « gonflé ») + ombre douce portée */
+  box-shadow: inset -3vmax -4vmax 6vmax rgba(0,0,0,0.16), 0 3vmax 6vmax rgba(0,0,0,0.10);
+}
+.fond-anime .tache-1 { top: -18vmax; left: -20vmax; }
+.fond-anime .tache-2 { top: 30vh; right: -26vmax; width: 50vmax; height: 46vmax;
+  border-radius: 58% 42% 45% 55% / 52% 58% 42% 48%; }
+.fond-anime .tache-3 { bottom: -24vmax; left: 8vw; width: 46vmax; height: 40vmax;
+  --force-gonfle: 0.40; border-radius: 42% 58% 52% 48% / 58% 46% 54% 42%; }
+/* la nuit : un peu plus discret */
+:root:not([data-theme="clair"]) .fond-anime .tache   { --force-gonfle: 0.38; }
+:root:not([data-theme="clair"]) .fond-anime .tache-3 { --force-gonfle: 0.30; }
+
+/* Mouvement doux : quelques % de déplacement, rotation de quelques degrés */
+@keyframes hiii-gonfle-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50%      { transform: translate(4vw, 3vh) rotate(8deg) scale(1.04); }
+}
+@keyframes hiii-gonfle-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50%      { transform: translate(-4vw, 4vh) rotate(-10deg) scale(1.05); }
+}
+@keyframes hiii-gonfle-3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50%      { transform: translate(5vw, -3vh) rotate(6deg) scale(1.03); }
+}
+.fond-anime .tache-1 { animation: hiii-gonfle-1 24s ease-in-out infinite; }
+.fond-anime .tache-2 { animation: hiii-gonfle-2 28s ease-in-out infinite; }
+.fond-anime .tache-3 { animation: hiii-gonfle-3 32s ease-in-out infinite; }
+/* Fond « Fixe » ou appareil qui demande moins d'animations : immobile */
+:root[data-fond="fixe"] .fond-anime .tache,
+:root.sans-animation .fond-anime .tache { animation: none; }
+@media (prefers-reduced-motion: reduce) { .fond-anime .tache { animation: none; } }
+
 </style>
 
   <!-- theme.js SANS "defer" : il doit s'exécuter tout de suite, avant
