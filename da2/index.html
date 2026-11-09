@@ -4955,6 +4955,34 @@ body:not(.sur-accueil) .voc-c3 { border-radius: 22px; }
 body:not(.sur-accueil) .explorer-tuile.verrouillee { opacity: 1; border-style: dashed; box-shadow: none; }
 body:not(.sur-accueil) .explorer-tuile.verrouillee .explorer-titre { color: var(--texte-doux); }
 
+/* =========================================================
+   PARTIE 55 – DA v2 : FOND DE L'EXERCICE SUR TABLETTE ET ORDINATEUR (choix A de Matteo, 9 nov.)
+   L'exercice est posé dans une CARTE au centre, sur un fond légèrement teinté de la
+   couleur du thème. Pas de cadre autour de la carte (demande de Matteo) : on la voit
+   grâce à sa couleur. Le bloc de la phrase prend la couleur du thème mélangée à la
+   carte, pour qu'il se voie aussi en thème sombre.
+   Téléphone : rien ne change (l'exercice prend déjà tout l'écran).
+   ========================================================= */
+@media (min-width: 768px) {
+  body.ecran-exercice { background: color-mix(in srgb, var(--violet) 10%, var(--fond)); }
+  body.ecran-exercice #gram-defi:not([hidden]) {
+    background: var(--surface);
+    border: 0;
+    border-radius: 32px;
+    box-shadow: none;
+    max-width: 760px;
+    min-height: calc(100svh - 64px);
+    margin: 32px auto;
+    padding: 24px 32px 28px;
+  }
+  body.ecran-exercice .gram-question {
+    background-color: var(--surface);
+    background-image: linear-gradient(color-mix(in srgb, var(--violet) 20%, transparent), color-mix(in srgb, var(--violet) 20%, transparent));
+  }
+  /* Le panneau de correction reste DANS la carte : même largeur que le contenu, posé en bas de la carte */
+  body.ecran-exercice #gram-correction:not([hidden]) { max-width: 696px; bottom: 48px; border-radius: 24px; }
+}
+
 </style>
 
   <!-- theme.js SANS "defer" : il doit s'exécuter tout de suite, avant
@@ -8426,6 +8454,12 @@ document.getElementById("gram-passer").addEventListener("click", commencerDefi);
    Au plus 3 questions de chaque jeu par unité (pour garder le mélange). */
 const JEUX_MAX_PAR_TYPE = 3;
 
+/** Enlève les tirets de dialogue (« Is she busy? — No. » → « Is she busy? No. ») :
+ *  dans un exercice, on ne voit pas que c'est un dialogue, le tiret gêne (demande de Matteo, 9 nov.) */
+function gramSansTiret(texte) {
+  return String(texte || "").replace(/\s+[—–]\s+/g, " ");
+}
+
 function gramMotsNormalises(phrase) {
   return phrase.split(/\s+/).filter(Boolean)
     .map((m) => m.toLowerCase().replace(/[.,!?;:"“”]/g, "").replace(/[’‘]/g, "'"));
@@ -8623,7 +8657,7 @@ function afficherQuestion() {
   document.getElementById("gram-message").hidden = true;
   document.getElementById("gram-defi").dataset.type = q.type;   // DA v2 : mise en page selon le type
   document.getElementById("gram-ecouter-grand").hidden = q.type !== "dictee";
-  document.getElementById("gram-question").textContent = q.question;
+  document.getElementById("gram-question").textContent = gramSansTiret(q.question);
   document.getElementById("gram-correction").hidden = true;
   document.getElementById("gram-combo").hidden = true;
 
@@ -8682,6 +8716,7 @@ function afficherQuestion() {
     zoneReponses.hidden = false;
     zoneReponses.classList.remove("deux-colonnes");
     q.mots.forEach((mot, i) => {
+      if (/^[—–]$/.test(mot)) return;   // tiret de dialogue : on ne le montre pas (pas un mot à toucher)
       const bouton = document.createElement("button");
       bouton.type = "button";
       bouton.className = "gram-option";
@@ -9046,7 +9081,7 @@ function corriger(reponse, bouton) {
   } else {
     phrase = bonnesReponses[0];                                        // ordre, écrire
   }
-  phrase = phrase.replace(/\s+([,.!?])/g, "$1")
+  phrase = gramSansTiret(phrase).replace(/\s+([,.!?])/g, "$1")
     .replace(/(\w) '(s|re|m|ve|ll|d)\b/g, "$1'$2"); // « I 've got » → « I've got »
   const bonne = document.getElementById("gram-bonne");
   bonne.textContent = phrase;
