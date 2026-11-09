@@ -4983,6 +4983,40 @@ body:not(.sur-accueil) .explorer-tuile.verrouillee .explorer-titre { color: var(
   body.ecran-exercice #gram-correction:not([hidden]) { max-width: 696px; bottom: 48px; border-radius: 24px; }
 }
 
+/* =========================================================
+   PARTIE 56 – DA v2 : LA CONSIGNE PLUS VOYANTE (choix de Matteo, 9 nov. : « A + B »)
+   Disposition A (grand titre + icône dans un petit carré) posée sur un BANDEAU
+   de la couleur du thème, toujours en pleine largeur, aligné à gauche.
+   Texte du bandeau = même couleur que le texte des boutons pleins (blanc en Actuel,
+   foncé dans les thèmes « holo ») → contraste vérifié avec axe-core.
+   ========================================================= */
+body.ecran-exercice #gram-etiquette {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 12px;
+  margin: 0;
+  padding: 8px 16px 8px 8px;
+  border-radius: 20px;
+  background: var(--violet);
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+:root[data-style="holo"] body.ecran-exercice #gram-etiquette { color: #0B0D16; }
+body.ecran-exercice #gram-etiquette .icone {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  padding: 9px;
+  box-sizing: content-box;
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--violet-texte);
+}
+
 </style>
 
   <!-- theme.js SANS "defer" : il doit s'exécuter tout de suite, avant
