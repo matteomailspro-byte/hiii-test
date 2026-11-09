@@ -4853,6 +4853,108 @@ body.ecran-exercice .voc-face {
   box-shadow: none;
 }
 
+/* =========================================================
+   PARTIE 53 (suite 3) – la présentation de l'image aimée par Matteo (9 nov.)
+   La consigne en titre, centrée ; la phrase dans un bloc PASTEL de la couleur du
+   thème (sans bordure) ; les réponses en PILULES centrées.
+   ========================================================= */
+body.ecran-exercice #gram-etiquette {
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+body.ecran-exercice .gram-consigne { text-align: center; }
+body.ecran-exercice .gram-question {
+  border: 0;
+  border-radius: 24px;
+  background-color: var(--fond);
+  background-image: linear-gradient(color-mix(in srgb, var(--violet) 16%, transparent), color-mix(in srgb, var(--violet) 16%, transparent));
+  text-align: center;
+  padding: 24px 18px;
+}
+body.ecran-exercice .gram-option {
+  justify-content: center;
+  text-align: center;
+  border-radius: 999px;
+}
+body.ecran-exercice .gram-reponses.mots-erreur .gram-option,
+body.ecran-exercice .gram-mot { border-radius: 999px; }
+body.ecran-exercice #gram-champ,
+body.ecran-exercice .gram-choix-valider,
+body.ecran-exercice .gram-ecrire .bouton-principal,
+body.ecran-exercice #gram-ordre-valider,
+body.ecran-exercice #gram-suivante { border-radius: 999px; }
+body.ecran-exercice #gram-champ { text-align: center; }
+/* La mauvaise réponse : « ! » + texte barré (pas seulement une couleur) ; la réponse choisie : bord plus épais */
+.gram-option-attention { flex: none; width: 22px; height: 22px; stroke-width: 2.6; }
+body.ecran-exercice .gram-option.faux { text-decoration: line-through; text-decoration-thickness: 2px; }
+body.ecran-exercice .gram-option.choisie { border-width: 3px; }
+
+/* =========================================================
+   PARTIE 54 – DA v2, ÉTAPE 3 : LES ÉCRANS DES MODES
+   (Grammaire, Vocabulaire, Erreurs, Explorer… = toutes les pages sauf l'accueil)
+   Règles de Matteo : les mots flous et les taches de couleur restent SEULEMENT
+   sur l'accueil ; une seule couleur principale par écran (celle du thème) ;
+   une illustration au maximum ; formes arrondies et épaisses, pas de dégradé
+   dans les titres.
+   ========================================================= */
+body:not(.sur-accueil) .fond-anime { display: none; }
+body:not(.sur-accueil) { background: var(--fond); }
+
+/* Les titres de page : simples, lisibles, sans dégradé ni relief */
+body:not(.sur-accueil) .page > h1 {
+  background: none !important;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: var(--texte);
+  color: var(--texte);
+  filter: none;
+  text-shadow: none;
+  font-family: var(--police-titre);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Une seule couleur : les cartes pastel prennent toutes la teinte du thème
+   (la couleur posée sur le fond du thème, pour rester opaque en mode sombre) */
+body:not(.sur-accueil) :is(.voc-violet, .voc-jaune, .voc-menthe, .voc-corail, .voc-ciel),
+body:not(.sur-accueil) .explorer-tuile:is(.teinte-violet, .teinte-menthe, .teinte-corail, .teinte-jaune) {
+  background-color: var(--fond);
+  background-image: linear-gradient(color-mix(in srgb, var(--violet) 14%, transparent), color-mix(in srgb, var(--violet) 14%, transparent));
+  border: 2px solid color-mix(in srgb, var(--violet) 30%, transparent);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--violet) 35%, transparent);
+}
+/* Les petits ronds d'icône des tuiles Explorer : même teinte partout */
+body:not(.sur-accueil) .explorer-tuile .pastille {
+  background: var(--surface);
+  color: var(--violet-texte);
+}
+
+/* Une illustration au maximum : les grands dessins des cartes de vocabulaire disparaissent */
+body:not(.sur-accueil) .voc-dessin { display: none; }
+
+/* Les boutons-paquets et « Jouer » : blancs, bord net, arrondis */
+body:not(.sur-accueil) .voc-paquet-bouton,
+body:not(.sur-accueil) .voc-jouer {
+  background: var(--surface);
+  color: var(--texte);
+  border: 2px solid var(--bord);
+  box-shadow: 0 3px 0 var(--bord-fort);
+  border-radius: 16px;
+}
+body:not(.sur-accueil) .voc-paquet-bouton small,
+body:not(.sur-accueil) .voc-paquet-bouton em { color: var(--texte-doux); }
+body:not(.sur-accueil) .voc-badge { background: var(--surface); color: var(--texte); }
+/* Tout est un peu plus sobre : moins d'ombre sous les grandes cartes */
+body:not(.sur-accueil) .voc-c3 { border-radius: 22px; }
+/* Tuiles « Bientôt » d'Explorer : plus de transparence (le badge devenait illisible) ;
+   on montre qu'elles sont fermées avec un bord en pointillés et un texte plus doux */
+body:not(.sur-accueil) .explorer-tuile.verrouillee { opacity: 1; border-style: dashed; box-shadow: none; }
+body:not(.sur-accueil) .explorer-tuile.verrouillee .explorer-titre { color: var(--texte-doux); }
+
 </style>
 
   <!-- theme.js SANS "defer" : il doit s'exécuter tout de suite, avant
@@ -8894,7 +8996,11 @@ function corriger(reponse, bouton) {
       b.insertAdjacentHTML("afterbegin", '<svg class="icone gram-option-coche" aria-hidden="true"><use href="#i-coche"></use></svg>');
     }
   });
-  if (bouton && !juste) bouton.classList.add("faux");
+  if (bouton && !juste) {
+    bouton.classList.add("faux");
+    // DA v2 : un « ! » dans la mauvaise réponse (dans le thème corail, la couleur seule ne suffit pas)
+    bouton.insertAdjacentHTML("afterbegin", '<svg class="icone gram-option-attention" aria-hidden="true"><use href="#i-attention"></use></svg>');
+  }
   const champEcrit = document.getElementById("gram-champ");
   champEcrit.classList.toggle("juste", juste && !document.getElementById("gram-ecrire").hidden);
   champEcrit.classList.toggle("faux", !juste && !document.getElementById("gram-ecrire").hidden);
